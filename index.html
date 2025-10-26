@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollador Web | Julio Peña</title>
+    <meta name="description" content="Portafolio y CV de Julio Peña, desarrollador especializado en C#, ASP.NET y diseño web moderno.">
+    <meta name="keywords" content="trabajo, desarrollo web, cv, programador, c#, asp.net, empleo, portafolio">
+    <meta name="author" content="Julio Peña">
+    <link rel="canonical" href="https://tudominio.com/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Mi Portafolio</div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#cv" class="nav-link">CV</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado/Hero -->
+    <section id="inicio" class="section hero">
+        <div class="hero-content">
+            <div class="hero-left"></div>
+            <div class="hero-right">
+                <div class="hero-photo" onclick="document.getElementById('heroPhotoInput').click()">
+                    <div class="hero-photo-placeholder" id="heroPhotoPlaceholder">
+                        <img src="./imagenes/MiFoto3.jpg" alt="Foto de Julio Peña Ortega" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <button type="button" class="photo-upload-btn" title="Cambiar foto">📷</button>
+                </div>
+                <div class="hero-text">
+                    <h1><span class="destacado">J</span>ulio <span class="destacado">P</span>eña <span class="destacado">O</span>rtega</h1>
+                    <p>Desarrollador Full Stack apasionado por crear experiencias digitales increíbles</p>
+                    <a href="#sobre-mi" class="cta-button">Conoce más sobre mí</a>
+                </div>
+            </div>
+            <input type="file" id="heroPhotoInput" class="photo-input" accept="image/*" onchange="handleHeroPhotoUpload(event)">
+        </div>
+    </section>
+
+   <!-- Sobre Mí -->
+    <section id="sobre-mi" class="section">
+        <div class="about">
+            <div class="about-content">
+                <div class="profile-img">👨‍💻</div>
+                <div class="about-text">
+                    <h2>Sobre Mí</h2>
+                    <p>Soy un desarrollador apasionado con más de 15 años de experiencia en el desarrollo web y desktop. Me especializo en crear aplicaciones modernas y funcionales que resuelven problemas reales.</p>
+                    <p>Mi enfoque se centra en escribir código limpio, escalable y mantener las mejores prácticas de desarrollo. Siempre estoy aprendiendo nuevas tecnologías y mejorando mis habilidades.</p>
+                    
+                    <h4>Sistemas Operativos</h4>
+                    <div class="skills">
+                        <span class="skill-tag">Windows 10</span>
+                        <span class="skill-tag">Windows 11</span>
+                        <span class="skill-tag">Win Server 2003</span>
+                    </div>
+
+                    <h4>Lenguajes de Programacion</h4>
+                    <div class="skills">
+                        <span class="skill-tag">Visual Basic 6.0</span> 
+                        <span class="skill-tag">Visual Basic .Net</span> 
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Asp Net Core</span>
+                        <span class="skill-tag">Java Script</span> 
+                        <span class="skill-tag">Html5</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+
+                    <h4>Base de Datos</h4>
+                    <div class="skills">
+                        <span class="skill-tag">MySql</span>
+                        <span class="skill-tag">Postgress</span>
+                        <span class="skill-tag">SyBase</span>
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">Sql Server 2008, 2012, 2014, 2016, 2020.</span>
+                    </div>
+
+                    <h4>Repositorios</h4>
+                    <div class="skills">
+                        <span class="skill-tag">SourceSafe</span>
+                        <span class="skill-tag">TFS</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">BitBucket</span>
+                        <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">Azure DevOps</span>
+                    </div>
+
+                    <h4>Otros</h4>
+                    <div class="skills">
+                        <span class="skill-tag">Visual Basic para Aplicaciones</span> 
+                        <span class="skill-tag">Access</span>
+                        <span class="skill-tag">Crystal Reports 8</span> 
+                        <span class="skill-tag">Crystal Reports XI</span>
+                        <span class="skill-tag">SharePoint</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="section">
+        <div class="projects">
+            <h2>Mis Proyectos</h2>                   
+            <div class="github-input">
+                <input type="text" id="githubUsername" value="JP16454-GitHub" readonly>
+                <button 
+                    onclick="loadGithubProjects()" 
+                    title="Presione para mostrar los proyectos existentes"
+                >
+                    Cargar Proyectos
+                </button>
+                <button onclick="clearProjects()">Limpiar Proyectos</button>
+            </div>          
+            <div id="projectsContainer" class="projects-grid">
+                <!-- Proyectos de ejemplo -->
+                <div class="project-card">
+                    <h3>Proyecto de Ejemplo 1</h3>
+                    <p>Una aplicación web moderna construida con React y Node.js. Incluye autenticación de usuarios y una API RESTful.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Proyecto de Ejemplo 2</h3>
+                    <p>Una aplicación móvil desarrollada con React Native que permite a los usuarios gestionar sus tareas diarias.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Proyecto de Ejemplo 3</h3>
+                    <p>Un dashboard de análisis de datos construido con Python y visualizaciones interactivas.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- CV -->
+<section id="cv" class="section">
+  <div class="cv-section">
+    <h2>Mi Currículum Vitae</h2>
+    <div class="cv-content">
+      <div class="cv-info">
+        <h3>Descarga mi CV</h3>
+        <p>
+          Aquí puedes descargar mi currículum vitae actualizado con toda mi experiencia profesional, educación y habilidades técnicas.
+        </p>
+
+        <div class="cv-actions">
+          <!-- Botón de descarga -->
+          <a href="#" class="cv-download-btn" onclick="downloadSampleCV()">📄 Descargar CV (PDF)</a>
+
+          <p style="color: #7f8c8d; font-size: 0.8rem; margin-top: 0.5rem;">
+            O sube tu CV:
+          </p>
+
+          <div class="cv-upload-area" onclick="document.getElementById('cvFileInput').click()">
+            <div class="cv-upload-icon">📁</div>
+            <div class="cv-upload-text">Haz clic aquí o arrastra tu CV</div>
+            <button type="button" class="cv-upload-btn">Seleccionar Archivo</button>
+          </div>
+
+          <input
+            type="file"
+            id="cvFileInput"
+            class="cv-file-input"
+            accept=".pdf,.doc,.docx"
+            onchange="handleCVUpload(event)"
+          />
+
+          <div id="cvFileInfo" class="cv-file-info">
+            <div class="cv-file-name"></div>
+            <div class="cv-file-size"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-preview">
+        <div class="cv-preview-icon">📋</div>
+        <h3>Vista Previa</h3>
+        <p>
+          Tu CV se mostrará aquí una vez que lo subas o se cargará automáticamente si existe.
+          Formatos soportados: PDF, DOC, DOCX.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section">
+        <div class="contact">
+            <h2>Contacto Profesional</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>julioing05@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/julio-peña-ortega-40048a258/" target="_blank" class="linkedin-icon">
+                            <i class="fab fa-linkedin"></i>
+                            Visita mi perfil en LinkedIn
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🐙</div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/JP16454-GitHub">JP16454-GitHub</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+52 (722) 313-9299</p>
+                        </div>
+                    </div>
+                </div>
+
+<form 
+    class="contact-form" 
+    action="https://formsubmit.co/julioing05@gmail.com" 
+    method="POST"
+>
+    <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="Nombre" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Correo" required>
+    </div>
+    <div class="form-group">
+        <label for="subject">Asunto</label>
+        <input type="text" id="subject" name="Asunto" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="Mensaje" required></textarea>
+    </div>
+    
+    <input type="hidden" name="_next" value="http://127.0.0.1:5503/#contacto"> 
+    
+    <input type="hidden" name="_captcha" value="false"> 
+
+    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+</form>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+<script src="script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98f92f651136fdf5',t:'MTc2MDYzNDc4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
